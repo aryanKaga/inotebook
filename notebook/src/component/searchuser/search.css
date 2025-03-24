@@ -1,0 +1,161 @@
+/* General styles */
+body {
+  background-color: #1a1a1a; /* Dark background */
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden; /* Prevents unnecessary scroll */
+}
+
+/* Invisible Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Hide scrollbar */
+}
+
+/* User list container */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Space for fixed search bar */
+  height: 90vh; /* Increased visible height */
+  overflow-y: auto; /* Allows scrolling */
+  padding-bottom: 20px;
+}
+
+/* Fixed Search Bar */
+.search-container {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.search-bar {
+  width: 250px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  outline: none;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect when typing */
+.search-bar:focus {
+  box-shadow: 0 0 10px #007bff;
+}
+
+/* User list items */
+.user-list-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 60px; /* Adjust spacing from search bar */
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 15px;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.user-item:hover {
+  transform: scale(1.02);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  margin-right: 15px;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.user-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.user-status {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Connect button */
+.connect-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.connect-button:hover {
+  background-color: #0056b3;
+}
+/* No results message */
+.no-files-text {
+  position: absolute;
+  top: 200px; /* Adjusted for more distance from search bar */
+  left: 53%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 12px 25px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.4s ease-in-out;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(-50%);
+  }
+}

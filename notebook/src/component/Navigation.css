@@ -1,0 +1,173 @@
+/* ===================
+   Global Variables
+=================== */
+:root {
+  /* Colors */
+  --primary: 237, 94%, 81%;
+  --background: 230, 12%, 15%;
+  --background-secondary: 230, 15%, 10%;
+  --text-primary: 0, 0%, 100%;
+  --gray: 0, 0%, 70%;
+  --highlight: 237, 100%, 70%;
+  --hover-light: 230, 100%, 30%;
+  --hover-dark: 230, 30%, 20%;
+
+  /* Transitions */
+  --transition-main: 0.3s ease-in-out;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* ===================
+   Global Styles
+=================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--text-primary));
+  line-height: 1.5;
+  overflow:hidden;
+}
+
+/* ===================
+   Navbar Styling
+=================== */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 100vh;
+  background-color: hsl(var(--background-secondary));
+  transition: width var(--transition-main);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#navbar:hover,
+.menu-icon:hover ~ #navbar {
+  width: 12rem;
+}
+
+/* Stylish Menu Icon */
+.menu-icon {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: hsl(var(--text-primary));
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: transform var(--transition-fast), color var(--transition-main);
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+  color: hsl(var(--highlight));
+}
+
+/* Navbar Items */
+.navbar-items {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Icon and Link Styling */
+.navbar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background var(--transition-main);
+  border-radius: 10px;
+}
+
+.navbar-item:hover {
+  background: hsl(var(--hover-dark));
+  transform: translateX(5px);
+}
+
+.navbar-item-inner {
+  display: flex;
+  align-items: center;
+  color: hsl(var(--gray));
+  transition: color var(--transition-main);
+}
+
+.navbar-item:hover .navbar-item-inner {
+  color: hsl(var(--text-primary));
+}
+
+.navbar-item-inner-icon-wrapper {
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Stylish Icons */
+.navbar-icon {
+  font-size: 1.2rem;
+  color: hsl(var(--text-primary));
+  transition: transform var(--transition-fast), color var(--transition-main);
+}
+
+.navbar-item:hover .navbar-icon {
+  transform: scale(1.2);
+  color: hsl(var(--highlight));
+}
+
+/* Show text on hover */
+.link-text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity var(--transition-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+#navbar:hover .link-text,
+.menu-icon:hover ~ #navbar .link-text {
+  opacity: 1;
+}
+
+/* ===================
+   Responsive Styles
+=================== */
+@media (max-width: 768px) {
+  #navbar {
+    width: 4rem;
+  }
+
+  #navbar:hover,
+  .menu-icon:hover ~ #navbar {
+    width: 10rem;
+  }
+
+  #main {
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #navbar {
+    width: 3.5rem;
+  }
+
+  #main {
+    margin-left: 3.5rem;
+  }
+}
+#dashboard{
+  margin-top:100%;
+}

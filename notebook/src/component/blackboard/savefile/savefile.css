@@ -1,0 +1,102 @@
+/* ===== File Saver Container ===== */
+.file-saver-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    padding: 30px;
+
+    background: rgba(20, 20, 20, 0.7); /* Subtle transparency */
+    backdrop-filter: blur(5px); /* Light glass effect */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    text-align: center;
+
+    /* Centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===== Heading ===== */
+h2 {
+    color: #ddd;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+/* ===== Input Field ===== */
+.file-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    border-radius: 6px;
+    background-color: rgba(30, 30, 30, 0.8); /* Subtle transparency */
+    color: #ddd;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.file-input:focus {
+    border: 1px solid #4caf50; /* Green accent */
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+/* ===== Button Group ===== */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* ===== Buttons (Save & Discard) ===== */
+.save-btn, .discard-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    
+    /* Transparent background */
+    background: transparent;
+    color: #69bfff; /* Soft blue text */
+    border: 2px solid #69bfff; /* Blue border */
+}
+
+/* Hover Effect */
+.save-btn:hover, .discard-btn:hover {
+    background: rgba(105, 191, 255, 0.2); /* Light blue hover */
+    box-shadow: 0px 0px 10px rgba(105, 191, 255, 0.3); /* Subtle glow */
+}
+
+/* ===== Message Styling ===== */
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 600px) {
+    .file-saver-container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .save-btn, .discard-btn {
+        width: 100%;
+        padding: 14px;
+    }
+}

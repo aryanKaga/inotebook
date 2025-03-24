@@ -1,0 +1,399 @@
+.boardnavigation {
+    background: hsl(230, 15%, 20%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1.5em;
+    height: 3em;
+}
+
+.boardnavigation .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.boardnavigation .nav-links li {
+    margin: 0 0.7em;
+    display: flex;
+    align-items: center;
+}
+
+.boardnavigation .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+    padding: 0.5em 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.boardnavigation .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+
+.boardnavigation .remove-btn {
+    margin-left: auto;
+    display: flex;
+    gap: 15px; /* Use pixels instead of percentages */
+}
+
+.boardnavigation .remove-btn button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.boardnavigation .remove-btn button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: white;
+}
+
+.draw_dropdown {
+    position: relative;
+}
+
+/* Dropdown Button */
+.custom-dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.custom-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+/* Dropdown Menu */
+.custom-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: hsl(230, 15%, 25%);
+    border: 1px solid white;
+    box-shadow: none;
+    width: 160px;
+    display: none;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.custom-dropdown-menu.show {
+    display: block;
+}
+
+.custom-dropdown-menu .dropdown-item {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-icon {
+    margin-left: auto;
+}
+
+/* Shapes & Resize Selection */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Style for select dropdown */
+.select {
+    background: transparent;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: background 0.3s ease-in-out;
+}
+
+.select:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling the select dropdown options */
+.select option {
+    background: hsl(230, 15%, 20%);
+    color: white;
+}
+
+/* Resize and Shapes Icons */
+.shape-icon {
+    font-size: 1.2em;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .boardnavigation {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .boardnavigation .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boardnavigation .remove-btn {
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+}
+.boardnavigation {
+    background: hsl(230, 15%, 20%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    height: 3em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Links */
+.boardnavigation .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.boardnavigation .nav-links li {
+    margin: 0 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.boardnavigation .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.75em;
+    padding: 0.4em 0.6em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.boardnavigation .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+}
+
+/* Launch Button */
+.boardnavigation .remove-btn {
+    margin-left: auto;
+}
+
+.boardnavigation .remove-btn button {
+    background: transparent;
+    border: 1.5px solid white;
+    color: white;
+    font-size: 0.75em;
+    padding: 0.4em 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.boardnavigation .remove-btn button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Icons */
+.icon {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: white;
+}
+
+/* Dropdown Styles */
+.custom-dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.75em;
+    padding: 0.4em 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Dropdown Menu */
+.custom-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: hsl(230, 15%, 25%);
+    border: 1px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 140px;  /* Reduced width */
+    display: none;
+    border-radius: 4px;
+    padding: 0.4em;
+}
+
+.custom-dropdown-menu.show {
+    display: block;
+}
+
+.custom-dropdown-menu .dropdown-item {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.75em;
+    transition: background 0.3s ease-in-out;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Shape & Resize Select */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* Select Box */
+.select {
+    background: transparent;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: background 0.3s ease-in-out;
+}
+
+.select:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling the select dropdown options */
+.select option {
+    background: hsl(230, 15%, 20%);
+    color: white;
+}
+
+/* Resize and Shapes Icons */
+.shape-icon {
+    font-size: 1em;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .boardnavigation {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .boardnavigation .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boardnavigation .remove-btn {
+        margin-left: 5%;
+        margin-top: 8px;
+    }
+
+    .custom-dropdown-menu {
+        width: 120px; /* Even smaller for mobile */
+    }
+}
+

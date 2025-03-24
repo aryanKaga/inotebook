@@ -1,0 +1,24 @@
+#blackboard {
+    margin: 0;
+    padding: 0;
+}
+
+.service {
+    overflow-y: scroll;
+    scrollbar-width: thin; /* Makes the scrollbar thin in Firefox */
+    scrollbar-color: white rgba(255, 255, 255, 0.2); /* White thumb, semi-transparent track */
+}
+
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+.service::-webkit-scrollbar {
+    width: 5px; /* Thin scrollbar */
+}
+
+.service::-webkit-scrollbar-thumb {
+    background-color: white; /* White scrollbar */
+    border-radius: 10px; /* Smooth rounded edges */
+}
+
+.service::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible transparent track */
+}

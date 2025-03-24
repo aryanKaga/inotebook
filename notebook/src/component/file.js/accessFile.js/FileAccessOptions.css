@@ -1,0 +1,100 @@
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -10vh; /* Moves it closer to the center */
+}
+
+.file-access-container {
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px; /* Increased width */
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Needed for the close button */
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+.option {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  text-align: left;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Highlight selected option */
+.option.active {
+  background: rgba(98, 54, 255, 0.2);
+  border: 2px solid #6236ff;
+  border-radius: 5px;
+}
+
+.option-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #30a3f1;
+}
+
+.option-text {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.description {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+  text-align: left;
+  max-width: 450px;
+}
+
+.set-button {
+  background: #30a3f1;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.set-button:hover {
+  background: #1f8ed6;
+}

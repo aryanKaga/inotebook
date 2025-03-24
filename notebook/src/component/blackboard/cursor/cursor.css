@@ -1,0 +1,29 @@
+#writing_pad{
+  cursor: none;
+}
+#writing_pad:hover +.custom-cursor{
+  background-color: rgb(255, 0, 0);
+  
+}
+.custom-cursor {
+  width: 10px;
+  height: 10px;
+  background-color:transparent; /* Change color */
+  border-radius: 50%;
+  position: fixed; /* Prevents lag */
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensures it doesn't block clicks */
+  transform: translate(-50%, -50%); /* Centers the cursor */
+  z-index: 10000; /* Ensures it's always visible */
+}
+
+/* Backup cursor (for debugging) */
+.fallback-cursor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: black;
+}
