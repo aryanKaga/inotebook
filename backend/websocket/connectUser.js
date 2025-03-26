@@ -4,11 +4,12 @@
  const key=require('../router/secretkey')
  async function ConnectUser({ connection, request, rooms }) {
     console.log('writing headers');
-   /* try{
+   try{
         const cookies=cookie.parse(request.headers.cookie);
         try{
             const identity=jwt.verify(cookies.auth_token,key).username;
-            console.log(identity);
+
+            console.log('identity is : 'identity);
             if(!rooms.has(identity)){
                 rooms.set(identity,[connection]);
             }
@@ -27,7 +28,7 @@
     }
     catch(err){
         console.log(err);
-    }*/
+    }
 
 
   }

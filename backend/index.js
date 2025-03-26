@@ -44,6 +44,15 @@ connection(url);
 
 // ✅ Express Middleware & Routes
 app.use('/', verify);
+
+
+
+
+
+
+
+
+
 app.use('/auth', authRouter);
 app.use('/canvas', canvasRouter);
 app.use('/Files', FileRouter);
