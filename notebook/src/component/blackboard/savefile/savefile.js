@@ -26,7 +26,7 @@ export default function FileSaver({ setservice }) {
         canvasInfo.title = fileName;
 
         try {
-            const success = await crudFunctions.SavzeFile({ 
+            const success = await crudFunctions.SaveFile({ 
                 setAuthorize, 
                 setVerification, 
                 set_importUserFiles //  Fixed variable name 

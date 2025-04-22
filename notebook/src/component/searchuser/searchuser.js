@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./search.css";
+import { sendConnection } from "./userFunctions";
 import useSocketFile from "../blackboard/customHooks/websocket";
+import { useAppService } from "../blackboard/customHooks/appHook";
+import { useViewFile } from "../blackboard/customHooks/viewPublicHook";
 const UserGrid = () => {
   const [search, setSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const {ws}=useSocketFile();
+  const {appService,setAppService}=useAppService();
+  const {viewid,setviewid}=useViewFile()
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       const fetchUsers = async () => {
@@ -66,12 +71,12 @@ const UserGrid = () => {
               <button className="connect-button"
               
               onClick={()=>{
-                console.log(ws);
-              
-                ws.send('request for connection send');
+                console.log(user)
+                setviewid(user._id)
+                setAppService('public')
               }}
               
-              >Connect</button>
+              >View</button>
             </div>
           ))}
         </div>

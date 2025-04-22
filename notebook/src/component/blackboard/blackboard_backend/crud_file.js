@@ -39,7 +39,16 @@ export const crudFunctions={
         await setFileInfo({filename,set_saveStatus,setAppService,setAuthorize,setVerification,sharestatus});
     }
 
-
+    ,getFileById:async (fileId)=>{
+        const response=await getFileById(fileId);
+        if(!response){
+            return false;
+        }
+        else{
+            console.log('received response');
+            return response
+        }
+    }
 }
 
 async function post_canvasInfo({ setAuthorize, setVerification, set_importUserFiles }) {
@@ -223,4 +232,35 @@ async function setFileInfo({filename,set_saveStatus,setAppService,setAuthorize,s
         set_saveStatus(true);
         setAppService('blackboard');
         return true;
+}
+async function getFileById(fileId){
+
+      if(!fileId){
+        console.log('File Not Found');
+        return false;
+      }  
+      console.log('fileid',fileId);
+      const response=await fetch('http://localhost:5000/Files/getFileData',{
+        method:"POST",
+        credentials:"include",
+        body:JSON.stringify({
+          fileId:fileId
+        }),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      });
+      if(response.ok){
+          const data=await response.json()
+          console.log(data)
+          return data;
+      }
+      else if(response.status===403){
+        console.log('response shows error')
+        return false;
+      }
+      else{
+        return false;
+      }
+    
 }

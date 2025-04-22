@@ -1,21 +1,22 @@
 import './Navigation.css';
-import { IoSearchOutline, IoHomeOutline, IoFolderOpenOutline, IoPieChartOutline  } from "react-icons/io5";
-import {CgAddR } from "react-icons/cg"
+import { IoSearchOutline, IoHomeOutline, IoFolderOpenOutline, IoPieChartOutline, IoNotificationsOutline } from "react-icons/io5";
+import { CgAddR } from "react-icons/cg";
 import { crudFunctions } from './blackboard/blackboard_backend/crud_file';
 import { useAppService } from './blackboard/customHooks/appHook';
 import { canvasInfo } from './blackboard/globalTool';
+
 function Navigation() {
-    const {setAppService}=useAppService();
+    const { setAppService } = useAppService();
+    
+    const handleNotifications = () => {
+        console.log("Opening notifications..."); // Replace with actual notification logic
+    };
+    
     return (
         <nav id="navbar">
             <ul className="navbar-items flexbox-col">
-                
-                
                 <li className="navbar-item flexbox-left"
-                    onClick={()=>{
-                        setAppService('connection');
-                    }}
-                >
+                    onClick={() => { setAppService('connection'); }}>
                     <a className="navbar-item-inner flexbox-left" href="#">
                         <div className="navbar-item-inner-icon-wrapper flexbox">
                             <IoSearchOutline />
@@ -32,8 +33,8 @@ function Navigation() {
                     </a>
                 </li>
                 <li className="navbar-item flexbox-left">
-                    <a className="navbar-item-inner flexbox-left" onClick={()=>{
-                        crudFunctions.importFiles({setAppService});
+                    <a className="navbar-item-inner flexbox-left" onClick={() => {
+                        crudFunctions.importFiles({ setAppService });
                     }}>
                         <div className="navbar-item-inner-icon-wrapper flexbox">
                             <IoFolderOpenOutline />
@@ -42,10 +43,11 @@ function Navigation() {
                     </a>
                 </li>
                 <li className="navbar-item flexbox-left">
-                    <a className="navbar-item-inner flexbox-left" onClick={()=>{
-                        canvasInfo.title='';
+                    <a className="navbar-item-inner flexbox-left" onClick={() => {
+                        canvasInfo.title = '';
                         canvasInfo.save([]);
-                        setAppService('blackboard')}}>
+                        setAppService('blackboard');
+                    }}>
                         <div className="navbar-item-inner-icon-wrapper flexbox">
                             <CgAddR />
                         </div>
@@ -60,11 +62,22 @@ function Navigation() {
                         <span className="link-text">Dashboard</span>
                     </a>
                 </li>
+                <li className="navbar-item flexbox-left" id="notifications" onClick={
+                    ()=>{
+                        setAppService('notifications');
+                        console.log('service in note');
+                    }
+                }>
+                    <a className="navbar-item-inner flexbox-left" href="#">
+                        <div className="navbar-item-inner-icon-wrapper flexbox">
+                            <IoNotificationsOutline />
+                        </div>
+                        <span className="link-text">Notifications</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     );
 }
-
-
 
 export default Navigation;

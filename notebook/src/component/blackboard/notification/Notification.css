@@ -1,0 +1,78 @@
+/* === Notification Container (Fixed, Taller & Scrollable) === */
+.notification-container {
+    position: fixed;
+    top: 5%; /* Leaves some space at the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    max-width: 600px;
+    height: 90vh; /* Covers most of the height with some space left */
+    background: #181a1b;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 1px solid #252525;
+    z-index: 1000;
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* === Scrollbar Styling (Optional) === */
+.notification-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notification-container::-webkit-scrollbar-thumb {
+    background: #2d65ff;
+    border-radius: 4px;
+}
+
+.notification-container::-webkit-scrollbar-track {
+    background: #252525;
+}
+
+/* === Notification List === */
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* === Notification Items === */
+.notification-item {
+    background: #0f0f0f;
+    padding: 16px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid #252525;
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* === Close Button Styling === */
+.close-btn {
+    background: #2d65ff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #1e4bdd;
+    transform: scale(1.05);
+}
+
+/* === Empty Notification Message === */
+.notification-empty {
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}

@@ -13,7 +13,9 @@ import { useAppService } from "./component/blackboard/customHooks/appHook";
 import WrappedFilesComp from "./component/file.js/userFile";
 import Connection from "./component/searchuser/searchuser";
 import useSocketFile from "./component/blackboard/customHooks/websocket";
-
+import Notification from "./component/blackboard/notification/notification";
+import ViewPublic from "./component/blackboard/viewPublic";
+import { ViewFileContextProvider } from "./component/blackboard/customHooks/viewPublicHook";
 export default function App() {
     const { appService, setAppService } = useAppService();
     const [Comp, setComp] = useState(null);
@@ -24,6 +26,8 @@ export default function App() {
         if (appService === "blackboard") setComp(() => Blackboard);
         else if (appService === "userFiles") setComp(() => WrappedFilesComp);
         else if (appService === "connection") setComp(() => Connection);
+        else if(appService==='notifications')setComp(()=>Notification)
+        else if (appService ==='public')setComp(()=>ViewPublic)
     }, [appService]);
 
     const { authorize, setAuthorize, verification, setVerification } = useAuthFile();
@@ -32,10 +36,17 @@ export default function App() {
         if (!authorize) return;
         let socket;
         console.log(authorize);
+
+       
+
+
         try{
-             socket = new WebSocket("ws://localhost:5000", [], {
+             socket = new WebSocket(`ws://localhost:5000`, [], {
                 withCredentials: true
-            });
+            })
+            ws.current=socket;
+            console.log(ws);
+            setisReady(true);
            
         }
         catch(err){
@@ -43,13 +54,15 @@ export default function App() {
             return ;
         }
         
+        
+
 
         socket.onopen = () => {
             console.log('Connection established');
             ws.current = socket;
             setisReady(true);
         };
-
+        
 
 
         
@@ -71,14 +84,16 @@ export default function App() {
 
     return (
         <SaveFileContextProvider>
-            <div id="parentapp">
-                <div id="navigationbar">
-                    <Navigation />
+             <ViewFileContextProvider>
+                <div id="parentapp">
+                    <div id="navigationbar">
+                        <Navigation />
+                    </div>
+                    <div id="blackboard">
+                        {Comp && <Comp />}
+                    </div>
                 </div>
-                <div id="blackboard">
-                    {Comp && <Comp />}
-                </div>
-            </div>
+                </ViewFileContextProvider>
         </SaveFileContextProvider>
     );
 }
