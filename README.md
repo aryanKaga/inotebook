@@ -1,4 +1,4 @@
-# 🎨 Animated Canvas with AI-Powered Extensions  
+# 🎨 Inotebook with AI-Powered Extensions  
 
 An interactive **animated canvas application** built from scratch in **pure JavaScript**.  
 The project features **sketching tools, file sharing systems**, and is being extended with **AI-driven animations and simulations**.  
