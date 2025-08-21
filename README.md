@@ -23,6 +23,3 @@ The project features **sketching tools, file sharing systems**, and is being ext
 
 ---
 
-## 📸 Demo  
-
-> *(Add GIFs or screenshots of your canvas tool in action)*
